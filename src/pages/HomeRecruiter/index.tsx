@@ -7,25 +7,8 @@ import {
 	HSeparator,
 	VSeparator,
 } from "../../components/Position/styled";
-import Feedback from "../../components/Feedback";
-import { Steps, Calendar, Badge } from "antd";
-import AssetImage from "../../components/AssetImage";
+import { Calendar, Badge } from "antd";
 
-import Google from "../../assets/google-logo.png";
-import Nubank from "../../assets/nubank-logo.png";
-import ReduxSaga from "../../assets/redux-saga-logo.png";
-import CssNextLevel from "../../assets/css-next-level-logo.png";
-
-import {
-	AiOutlineUser,
-	AiOutlineSolution,
-	AiOutlineSmile,
-	AiOutlineUsergroupAdd,
-} from "react-icons/ai";
-import { LoadingOutlined } from "@ant-design/icons";
-import Stepper from "../../components/Steps";
-import ProgressCourse from "../../components/ProgressCourse";
-import { BadgeProps } from "antd/lib/badge/index";
 import { PresetStatusColorType } from "antd/lib/_util/colors";
 import JobOpportunity, { TagProps } from "../../components/JobOpportunity";
 import Avatar1 from "../../assets/avatar-1.png";
@@ -37,8 +20,6 @@ import Avatar6 from "../../assets/avatar-6.png";
 import Avatar7 from "../../assets/avatar-7.png";
 import { ValuePanel } from "../../components/Typography/styles";
 
-const { Step } = Steps;
-
 interface Data {
 	type: PresetStatusColorType;
 	content: string;
@@ -46,9 +27,8 @@ interface Data {
 
 const HomeRecruiter: React.FC = () => {
 	const getListData = (value: moment.Moment): Data[] => {
-		console.log("value", value.date());
 		let listData: Data[] = [];
-		if (value.month() == 5) {
+		if (value.month() === 5) {
 			switch (value.date()) {
 				case 4:
 					listData = [

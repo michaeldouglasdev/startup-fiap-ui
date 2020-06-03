@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 const Layout: React.FC = ({ children }) => {
 	console.log("location", window.location);
 
-	const [isRecruiter, setIsRecruiter] = useState(
+	const [isRecruiter] = useState(
 		window.location.pathname.includes("recruiter")
 	);
 

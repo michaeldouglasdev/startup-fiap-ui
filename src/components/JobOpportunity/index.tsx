@@ -7,8 +7,7 @@ import {
 	PotencialCandidateText,
 } from "./styles";
 import { VBox, HBox, VSeparator } from "../Position/styled";
-import { Tag, Divider } from "antd";
-import AssetImage from "../AssetImage";
+import { Tag } from "antd";
 
 export interface TagProps {
 	color?: string;
