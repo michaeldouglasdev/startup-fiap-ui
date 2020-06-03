@@ -1,8 +1,12 @@
 import React from "react";
 import { Avatar as UserAvatar } from "./styles";
 
-const Avatar: React.FC = () => {
-	return <UserAvatar></UserAvatar>;
+interface AvatarProps {
+	src: string;
+}
+
+const Avatar: React.FC<AvatarProps> = ({ src }) => {
+	return <UserAvatar src={src}></UserAvatar>;
 };
 
 export default Avatar;

@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import AvatarDemo from "../../assets/avatar-demo.png";
 
-export const Avatar = styled.div`
+interface AvatarProps {
+	src: string;
+}
+export const Avatar = styled.div<AvatarProps>`
 	height: 64px;
 	width: 64px;
-	background: url(${AvatarDemo}) no-repeat center;
+	background: url(${({ src }) => src}) no-repeat center;
 	background-size: cover;
 	border-radius: 50%;
 `;

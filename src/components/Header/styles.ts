@@ -10,7 +10,7 @@ export const HeaderWrapper = styled.header`
 	background: #025891;
 	background: linear-gradient(to right, #16a0bf, #025891);
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-	z-index: 1;
+	z-index: 3;
 `;
 
 export const HeaderIconGroup = styled.div`

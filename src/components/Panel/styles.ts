@@ -3,9 +3,10 @@ import styled from "styled-components";
 interface ContainerProps {
 	noShadow?: boolean;
 	hasBorder?: boolean;
+	background?: string;
 }
 export const Container = styled.div<ContainerProps>`
-	background: white;
+	background: ${({ background }) => (background ? background : "white")};
 	border: ${({ hasBorder }) => (hasBorder ? "1px solid #ddd" : "unset")};
 	border-radius: 8px;
 	box-shadow: ${({ noShadow }) =>
@@ -15,14 +16,14 @@ export const Container = styled.div<ContainerProps>`
 
 interface TitleProps {
 	borderTitle?: boolean;
+	colorTitle?: string;
 }
 
 export const Title = styled.h2<TitleProps>`
 	padding: 16px 16px 4px 16px;
 	font-size: 20px;
-	color: #555;
+	color: ${({ colorTitle }) => (colorTitle ? colorTitle : "#555")};
 	font-weight: normal;
-	text-transform: capitalize;
 	border-bottom: ${(props) => (props.borderTitle ? "1px solid #ddd" : "none")};
 `;
 
