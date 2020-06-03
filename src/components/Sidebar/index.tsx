@@ -105,35 +105,35 @@ const Sidebar: React.FC<SidebarProps> = ({ isRecruiter }) => {
 						</MenuBarItem>
 
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/recruiter">
 								<FaRegBuilding />
 								Vagas
 							</MenuBarItemLink>
 						</MenuBarItem>
 
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/recruiter">
 								<AiOutlineUser />
 								Candidatos
 							</MenuBarItemLink>
 						</MenuBarItem>
 
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/recruiter">
 								<IoMdPaper />
 								Exames
 							</MenuBarItemLink>
 						</MenuBarItem>
 
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/recruiter">
 								<AiOutlineMail />
 								Mensagens
 							</MenuBarItemLink>
 						</MenuBarItem>
 
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/recruiter">
 								<AiOutlinePoweroff />
 								Sair
 							</MenuBarItemLink>
