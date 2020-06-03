@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface HBoxProps {
 	justifyContent?:
@@ -10,6 +10,7 @@ interface HBoxProps {
 
 	alignItems?: "center" | "flex-start";
 	width?: string;
+	alignSelf?: "center";
 }
 export const HBox = styled.div<HBoxProps>`
 	display: flex;
@@ -32,11 +33,28 @@ export const VSeparator = styled.div`
 
 export const VBox = styled.div<HBoxProps>`
 	display: flex;
+	flex: 1;
 	flex-direction: column;
 	justify-content: ${(props) =>
 		props.justifyContent ? props.justifyContent : "stretch"};
 	align-items: ${({ alignItems }) => (alignItems ? alignItems : "stretch")};
 
 	height: 100%;
-	width: ${({ width }) => (width ? width : "unset")};
+	${({ width }) =>
+		width &&
+		css`
+			width: width;
+		`}
+
+	${({ alignSelf }) =>
+		alignSelf &&
+		css`
+			align-self: ${alignSelf};
+		`}
+
+		${({ width }) =>
+			width &&
+			css`
+				width: ${width};
+			`}
 `;

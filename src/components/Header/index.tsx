@@ -10,7 +10,7 @@ import VagaCertaLogo from "../../assets/vaga-certa-logo.png";
 import ToggleMenu from "../ToggleMenu";
 import { HBox } from "../Position/styled";
 import Input from "../Input";
-import { HeaderWrapper, HeaderIconGroup } from "./styles";
+import { HeaderWrapper, HeaderIconGroup, HeaderIcon } from "./styles";
 
 const Header: React.FC = () => {
 	const formRef = useRef<FormHandles>(null);
@@ -37,10 +37,21 @@ const Header: React.FC = () => {
 				</Form>
 				<HeaderIconGroup>
 					<HBox alignItems="center">
-						<MdEmail />
-						<MdFavorite />
-						<MdNotifications />
-						<FaCog />
+						<HeaderIcon>
+							<MdEmail />
+						</HeaderIcon>
+
+						<HeaderIcon>
+							<MdFavorite />
+						</HeaderIcon>
+
+						<HeaderIcon>
+							<MdNotifications />
+						</HeaderIcon>
+
+						<HeaderIcon>
+							<FaCog />
+						</HeaderIcon>
 					</HBox>
 				</HeaderIconGroup>
 			</HBox>

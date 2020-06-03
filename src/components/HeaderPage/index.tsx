@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Title } from "./styles";
+import { Container, Title, Subtitle } from "./styles";
 
 interface HeaderPageProps {
 	title: string;
@@ -10,6 +10,7 @@ const HeaderPage: React.FC<HeaderPageProps> = ({ title }) => {
 	return (
 		<Container>
 			<Title>{title}</Title>
+			<Subtitle></Subtitle>
 		</Container>
 	);
 };

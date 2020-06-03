@@ -10,8 +10,12 @@ import {
 import Feedback from "../../components/Feedback";
 import { Steps } from "antd";
 import AssetImage from "../../components/AssetImage";
+
 import Google from "../../assets/google-logo.png";
 import Nubank from "../../assets/nubank-logo.png";
+import ReduxSaga from "../../assets/redux-saga-logo.png";
+import CssNextLevel from "../../assets/css-next-level-logo.png";
+
 import {
 	AiOutlineUser,
 	AiOutlineSolution,
@@ -20,6 +24,7 @@ import {
 } from "react-icons/ai";
 import { LoadingOutlined } from "@ant-design/icons";
 import Stepper from "../../components/Steps";
+import ProgressCourse from "../../components/ProgressCourse";
 
 const { Step } = Steps;
 
@@ -52,7 +57,20 @@ const Home: React.FC = () => {
 						</HBox>
 					</Panel>
 					<HSeparator />
-					<Panel title="Progresso"></Panel>
+					<Panel title="Progressos">
+						<ProgressCourse
+							name="React: Redux e Saga"
+							percent={30}
+							src={ReduxSaga}
+						></ProgressCourse>
+
+						<ProgressCourse
+							name="CSS Next Level"
+							percent={90}
+							src={CssNextLevel}
+							rounded={true}
+						></ProgressCourse>
+					</Panel>
 				</HBox>
 
 				<VSeparator />
