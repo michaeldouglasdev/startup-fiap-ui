@@ -64,13 +64,16 @@ const Dropdown: React.FC<InputProps> = ({
     else {
       setLabel(item)
     }
-    setSelectedValue(item);
+    await setSelectedValue(item);
+
     setIsFilled(true);
+
     if (onSelectItem) {
-      onSelectItem(item);
+      onSelectItem(selectedValue);
     }
+
     handleInputBlur();
-  }, [itemLabel, onSelectItem, handleInputBlur]);
+  }, [itemLabel, onSelectItem, handleInputBlur, selectedValue]);
 
   return (
     <Container

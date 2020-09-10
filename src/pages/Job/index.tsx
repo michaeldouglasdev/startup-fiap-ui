@@ -15,7 +15,7 @@ const JobPage: React.FC = (props: any) => {
     }
 
     getJob();
-  }, []);
+  }, [props.match.params.id]);
   return (
     <Root titlePage={job.title}>
 

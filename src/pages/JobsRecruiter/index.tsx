@@ -18,14 +18,19 @@ const JobsRecruiterPage: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const [cities, setCities] = useState<CityIBGE[]>([{} as CityIBGE]);
   const [states, setStates] = useState<StateIBGE[]>([{} as StateIBGE]);
-  const [hirings, setHirings] = useState<string[]>(['CLT', 'PJ']);
+  const [hirings, setHirings] = useState<string[]>([]);
 
   useEffect(() => {
     async function getStates() {
       await setStates((await api.get("https://servicodados.ibge.gov.br/api/v1/localidades/estados")).data);
     }
 
+    async function getHirings() {
+      setHirings(['CLT', 'PJ']);
+    }
+
     getStates();
+    getHirings();
   }, []);
 
   const handleSubmit = useCallback(async (data: object) => {
