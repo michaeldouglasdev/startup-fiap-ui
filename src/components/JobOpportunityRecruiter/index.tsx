@@ -13,13 +13,13 @@ export interface TagProps {
 	color?: string;
 	text: string;
 }
-interface JobOpportunityProps {
+interface JobOpportunityRecruiterProps {
 	title: string;
 	description: string;
 	tags?: TagProps[];
 	potentialCandidates?: string[];
 }
-const JobOpportunity: React.FC<JobOpportunityProps> = ({
+const JobOpportunityRecruiter: React.FC<JobOpportunityRecruiterProps> = ({
 	title,
 	description,
 	tags,
@@ -59,4 +59,4 @@ const JobOpportunity: React.FC<JobOpportunityProps> = ({
 	);
 };
 
-export default JobOpportunity;
+export default JobOpportunityRecruiter;

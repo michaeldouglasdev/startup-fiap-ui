@@ -1,19 +1,14 @@
-import React, { useRef } from "react";
-import { FormHandles } from "@unform/core";
-import { Form } from "@unform/web";
+import React from "react";
 import { MdEmail, MdNotifications, MdFavorite } from "react-icons/md";
-import { FiSearch } from "react-icons/fi";
 import { FaCog } from "react-icons/fa";
 
 import AssetImage from "../AssetImage";
 import VagaCertaLogo from "../../assets/vaga-certa-logo.png";
 import ToggleMenu from "../ToggleMenu";
 import { HBox } from "../Position/styled";
-import Input from "../Input";
 import { HeaderWrapper, HeaderIconGroup, HeaderIcon } from "./styles";
 
 const Header: React.FC = () => {
-	const formRef = useRef<FormHandles>(null);
 
 	return (
 		<HeaderWrapper>
@@ -23,18 +18,6 @@ const Header: React.FC = () => {
 					<ToggleMenu />
 				</HBox>
 
-				<Form
-					onSubmit={() => console.log("onSubmit")}
-					ref={formRef}
-					style={{ alignSelf: "center" }}
-				>
-					<Input
-						name="search"
-						icon={FiSearch}
-						placeholder="Search"
-						transparent={true}
-					/>
-				</Form>
 				<HeaderIconGroup>
 					<HBox alignItems="center">
 						<HeaderIcon>

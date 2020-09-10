@@ -43,42 +43,42 @@ const Sidebar: React.FC<SidebarProps> = ({ isRecruiter }) => {
 					</ProfileWrapper>
 					<MenuBar>
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/candidate">
 								<AiOutlineHome />
 								Home
 							</MenuBarItemLink>
 						</MenuBarItem>
 
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/candidate">
 								<FaRegBuilding />
 								Empresas
 							</MenuBarItemLink>
 						</MenuBarItem>
 
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/candidate/jobs">
 								<FaGraduationCap />
-								Cursos
+								Vagas
 							</MenuBarItemLink>
 						</MenuBarItem>
 
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/candidate">
 								<IoMdPaper />
 								Exames
 							</MenuBarItemLink>
 						</MenuBarItem>
 
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/candidate">
 								<AiOutlineMail />
 								Mensagens
 							</MenuBarItemLink>
 						</MenuBarItem>
 
 						<MenuBarItem>
-							<MenuBarItemLink to="/">
+							<MenuBarItemLink to="/candidate">
 								<AiOutlinePoweroff />
 								Sair
 							</MenuBarItemLink>
@@ -86,61 +86,61 @@ const Sidebar: React.FC<SidebarProps> = ({ isRecruiter }) => {
 					</MenuBar>
 				</SidebarWrapper>
 			) : (
-				<SidebarWrapper>
-					<ProfileWrapper>
-						<ProfileAvatarWrapper>
-							<Avatar src={AvatarRecruiter}></Avatar>
-						</ProfileAvatarWrapper>
-						<ProfileDescription>
-							<ProfileName>Juliana Medeiros</ProfileName>
-							<ProfileRole>Analista de R&S Sênior</ProfileRole>
-						</ProfileDescription>
-					</ProfileWrapper>
-					<MenuBar>
-						<MenuBarItem>
-							<MenuBarItemLink to="/recruiter">
-								<AiOutlineHome />
+					<SidebarWrapper>
+						<ProfileWrapper>
+							<ProfileAvatarWrapper>
+								<Avatar src={AvatarRecruiter}></Avatar>
+							</ProfileAvatarWrapper>
+							<ProfileDescription>
+								<ProfileName>Juliana Medeiros</ProfileName>
+								<ProfileRole>Analista de R&S Sênior</ProfileRole>
+							</ProfileDescription>
+						</ProfileWrapper>
+						<MenuBar>
+							<MenuBarItem>
+								<MenuBarItemLink to="/recruiter">
+									<AiOutlineHome />
 								Home
 							</MenuBarItemLink>
-						</MenuBarItem>
+							</MenuBarItem>
 
-						<MenuBarItem>
-							<MenuBarItemLink to="/recruiter">
-								<FaRegBuilding />
+							<MenuBarItem>
+								<MenuBarItemLink to="/recruiter/jobs">
+									<FaRegBuilding />
 								Vagas
 							</MenuBarItemLink>
-						</MenuBarItem>
+							</MenuBarItem>
 
-						<MenuBarItem>
-							<MenuBarItemLink to="/recruiter">
-								<AiOutlineUser />
+							<MenuBarItem>
+								<MenuBarItemLink to="/recruiter">
+									<AiOutlineUser />
 								Candidatos
 							</MenuBarItemLink>
-						</MenuBarItem>
+							</MenuBarItem>
 
-						<MenuBarItem>
-							<MenuBarItemLink to="/recruiter">
-								<IoMdPaper />
+							<MenuBarItem>
+								<MenuBarItemLink to="/recruiter">
+									<IoMdPaper />
 								Exames
 							</MenuBarItemLink>
-						</MenuBarItem>
+							</MenuBarItem>
 
-						<MenuBarItem>
-							<MenuBarItemLink to="/recruiter">
-								<AiOutlineMail />
+							<MenuBarItem>
+								<MenuBarItemLink to="/recruiter">
+									<AiOutlineMail />
 								Mensagens
 							</MenuBarItemLink>
-						</MenuBarItem>
+							</MenuBarItem>
 
-						<MenuBarItem>
-							<MenuBarItemLink to="/recruiter">
-								<AiOutlinePoweroff />
+							<MenuBarItem>
+								<MenuBarItemLink to="/recruiter">
+									<AiOutlinePoweroff />
 								Sair
 							</MenuBarItemLink>
-						</MenuBarItem>
-					</MenuBar>
-				</SidebarWrapper>
-			)}
+							</MenuBarItem>
+						</MenuBar>
+					</SidebarWrapper>
+				)}
 		</>
 	);
 };

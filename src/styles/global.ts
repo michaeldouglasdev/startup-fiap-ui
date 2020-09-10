@@ -8,6 +8,10 @@ export default createGlobalStyle`
 		outline: 0;
 	}
 
+	html {
+		scroll-behavior: smooth;
+	}
+	
 	body {
 		-webkit-font-smoothing: antialised;
 	}

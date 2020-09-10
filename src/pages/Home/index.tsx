@@ -28,7 +28,7 @@ import ProgressCourse from "../../components/ProgressCourse";
 
 const { Step } = Steps;
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
 	return (
 		<>
 			<Root titlePage="Home">
@@ -144,4 +144,4 @@ const Home: React.FC = () => {
 	);
 };
 
-export default Home;
+export default HomePage;

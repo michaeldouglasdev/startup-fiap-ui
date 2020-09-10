@@ -4,17 +4,19 @@ import { Container } from "./styled";
 
 interface ContainerProps {
 	titlePage: string;
+	description?: string;
 	tradicionalHeader?: boolean;
 }
 
 const Root: React.FC<ContainerProps> = ({
 	children,
 	titlePage,
+	description,
 	tradicionalHeader,
 }) => {
 	return (
 		<>
-			{!tradicionalHeader && <HeaderPage title={titlePage}></HeaderPage>}
+			{!tradicionalHeader && <HeaderPage title={titlePage} description={description}></HeaderPage>}
 			<Container>{children}</Container>
 		</>
 	);

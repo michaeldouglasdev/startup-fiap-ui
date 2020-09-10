@@ -9,7 +9,7 @@ interface ContainerProps {
 }
 
 export const Container = styled.div<ContainerProps>`
-
+	
 	background: ${({ transparent }) => transparent ? 'transparent' : 'white'};
 	border: 1px solid #ddd;
 	padding: 16px;
@@ -24,10 +24,11 @@ export const Container = styled.div<ContainerProps>`
 		margin-top: 8px;
 	}
 
-	input {
+	textarea {
 		background: transparent;
 		flex: 1;
-		border: 0;
+    border: 0;
+    resize: none;
 
 		${({ transparent }) => transparent ?
 		css`
@@ -54,7 +55,8 @@ export const Container = styled.div<ContainerProps>`
 
 	svg {
 		margin-right: 16px;
-
+    align-self: baseline;
+    margin-top: 2px;
 	}
 
 	${(props) =>
@@ -70,7 +72,7 @@ export const Container = styled.div<ContainerProps>`
 			color: #16a0bf;
 			border-color: #16a0bf;
 
-			input {
+			textarea {
 				color: #16a0bf;
 
 				&::placeholder {
@@ -84,7 +86,7 @@ export const Container = styled.div<ContainerProps>`
 		css`
 			color: #16a0bf;
 
-			input {
+			textarea {
 				color: #16a0bf;
 				
 				svg {

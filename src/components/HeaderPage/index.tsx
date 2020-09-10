@@ -6,11 +6,11 @@ interface HeaderPageProps {
 	description?: string;
 }
 
-const HeaderPage: React.FC<HeaderPageProps> = ({ title }) => {
+const HeaderPage: React.FC<HeaderPageProps> = ({ title, description }) => {
 	return (
 		<Container>
 			<Title>{title}</Title>
-			<Subtitle></Subtitle>
+			<Subtitle>{description}</Subtitle>
 		</Container>
 	);
 };

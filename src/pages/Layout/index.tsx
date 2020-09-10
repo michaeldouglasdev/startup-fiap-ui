@@ -12,12 +12,25 @@ const Layout: React.FC = ({ children }) => {
 		window.location.pathname.includes("recruiter")
 	);
 
+	const [isLandingPage] = useState(
+		window.location.pathname === "/"
+	)
+
 	return (
 		<>
-			<Header></Header>
-			<Sidebar isRecruiter={isRecruiter}></Sidebar>
-			<Container>{children}</Container>
-			<Footer></Footer>
+			{!isLandingPage ?
+				<>
+					<Header></Header>
+					<Sidebar isRecruiter={isRecruiter}></Sidebar>
+					<Container>{children}</Container>
+					<Footer></Footer>
+				</>
+				:
+
+				<>
+					{children}
+				</>
+			}
 			<GlobalStyle />
 		</>
 	);

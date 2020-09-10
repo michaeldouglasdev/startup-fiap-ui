@@ -19,6 +19,6 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.span`
 	font-size: 16px;
-	color: #ccc;
+	color: #dfdfdf;
 	font-weight: 500;
 `;

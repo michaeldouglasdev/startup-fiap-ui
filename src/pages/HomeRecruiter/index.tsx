@@ -10,7 +10,7 @@ import {
 import { Calendar, Badge } from "antd";
 
 import { PresetStatusColorType } from "antd/lib/_util/colors";
-import JobOpportunity, { TagProps } from "../../components/JobOpportunity";
+import JobOpportunityRecruiter, { TagProps } from "../../components/JobOpportunityRecruiter";
 import Avatar1 from "../../assets/avatar-1.png";
 import Avatar2 from "../../assets/avatar-2.png";
 import Avatar3 from "../../assets/avatar-3.jpg";
@@ -25,7 +25,7 @@ interface Data {
 	content: string;
 }
 
-const HomeRecruiter: React.FC = () => {
+const HomeRecruiterPage: React.FC = () => {
 	const getListData = (value: moment.Moment): Data[] => {
 		let listData: Data[] = [];
 		if (value.month() === 5) {
@@ -156,20 +156,20 @@ const HomeRecruiter: React.FC = () => {
 			<Root titlePage="Home">
 				<HBox>
 					<Panel title="Suas vagas">
-						<JobOpportunity
+						<JobOpportunityRecruiter
 							title="Desenvolvedor Front-end Jr."
 							description="O foco do desenvolvedor será de componentizar nossa User Interface para ganhar mais velocidade e escala, acompanhando o ritmo de crescimento da empresa, sem perder a qualidade e afetar a UX. Você também vai: Trabalhar no desenvolvimento do ciclo de vida completo de projetos sensíveis ao tempo; Recomendar tecnologias apropriadas para implementar novos recursos; "
 							tags={getTags(1)}
 							potentialCandidates={[Avatar1, Avatar2, Avatar3]}
-						></JobOpportunity>
+						></JobOpportunityRecruiter>
 
 						<VSeparator />
-						<JobOpportunity
+						<JobOpportunityRecruiter
 							title="Analista de BI Jr."
 							description="Estruturar bases de dados e implementar rotinas automáticas para extração de dados. Desenvolvimento de Dashboards e relatórios através da ferramenta Power BI. Experiência em desenvolvimento de Dashboards na ferramenta MS - Power BI. Habilidades para customização de componentes Power BI e utilização de linguagem Dax,"
 							tags={getTags(2)}
 							potentialCandidates={[Avatar4, Avatar5, Avatar6, Avatar7]}
-						></JobOpportunity>
+						></JobOpportunityRecruiter>
 					</Panel>
 					<HSeparator />
 
@@ -226,4 +226,4 @@ const HomeRecruiter: React.FC = () => {
 	);
 };
 
-export default HomeRecruiter;
+export default HomeRecruiterPage;

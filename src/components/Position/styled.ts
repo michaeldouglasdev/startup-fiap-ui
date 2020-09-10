@@ -2,12 +2,12 @@ import styled, { css } from "styled-components";
 
 interface HBoxProps {
 	justifyContent?:
-		| "center"
-		| `space-between`
-		| "space-evenly"
-		| "space-around"
-		| "flex-start"
-		| "flex-end";
+	| "center"
+	| `space-between`
+	| "space-evenly"
+	| "space-around"
+	| "flex-start"
+	| "flex-end";
 
 	alignItems?: "center" | "flex-start";
 	width?: string;
@@ -15,6 +15,7 @@ interface HBoxProps {
 	flexDirection?: "row" | "row-reverse";
 	heightBox?: string;
 }
+
 export const HBox = styled.div<HBoxProps>`
 	display: flex;
 	flex-direction: ${({ flexDirection }) =>
@@ -36,8 +37,19 @@ export const HSeparator = styled.div`
 	padding: 0 10px;
 `;
 
-export const VSeparator = styled.div`
-	padding: 10px 0;
+interface VSeparatorProps {
+	show?: boolean
+}
+
+export const VSeparator = styled.div<VSeparatorProps>`
+	margin: 10px 0;
+
+	${({ show }) => show &&
+		css`
+			height: 1px;
+			background: #eee;
+		`
+	}
 `;
 
 export const VBox = styled.div<HBoxProps>`
@@ -62,8 +74,36 @@ export const VBox = styled.div<HBoxProps>`
 		`}
 
 		${({ width }) =>
-			width &&
-			css`
+		width &&
+		css`
 				width: ${width};
 			`}
 `;
+
+export interface ExpansedBoxProps {
+	expansed?: boolean;
+}
+export const ExpansedBox = styled.div<ExpansedBoxProps>`
+
+	display: block;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	
+	${({ expansed }) => expansed ?
+		css`
+			-webkit-line-clamp: unset;
+		`
+		:
+		css`
+			-webkit-line-clamp: 2;
+		`
+	}
+`
+
+
+export const List = styled.div`
+	display: grid;
+	grid-row-gap: 8px;
+`
