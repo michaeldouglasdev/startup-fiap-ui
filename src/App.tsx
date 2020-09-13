@@ -3,13 +3,17 @@ import { BrowserRouter } from "react-router-dom";
 
 import Routes from "./routes";
 import Layout from "./pages/Layout";
+import AppProvider from "./providers/AppProvider";
 
 const App: React.FC = () => {
 	return (
 		<BrowserRouter>
-			<Layout>
-				<Routes />
-			</Layout>
+			<AppProvider>
+				<Layout>
+					<Routes />
+				</Layout>
+			</AppProvider>
+
 		</BrowserRouter>
 	);
 };

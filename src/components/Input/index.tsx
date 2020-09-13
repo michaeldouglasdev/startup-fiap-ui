@@ -14,12 +14,16 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 	name: string;
 	icon?: React.ComponentType<IconBaseProps>;
 	transparent?: boolean;
+	small?: boolean;
+	rounded?: boolean
 }
 
 const Input: React.FC<InputProps> = ({
 	name,
 	icon: Icon,
 	transparent,
+	small,
+	rounded,
 	...rest
 }) => {
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -52,6 +56,8 @@ const Input: React.FC<InputProps> = ({
 			isFilled={isFilled}
 			isFocused={isFocused}
 			transparent={transparent}
+			small={small}
+			rounded={rounded}
 		>
 			{Icon && <Icon size={20} />}
 			<input

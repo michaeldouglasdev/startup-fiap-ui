@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { Container, Header, Wallpaper, WallpaperTitle, WallpaperDescription, ButtonBar, BoxPlansForCandidates, Menu, MenuItem, MenuItemLink, ContactBar, ContactBarComumContacts, ContactBarComumContactsText, ContactBarComumContactsSeparator, ContactBarSocialMedia, BoxPlansForCompanies, BoxPlansForCompaniesTitle, SignInSignUpBox, ContactSectionWrapper, ContactSectionTitle, ContactSectionSubtitle, ContactSectionItemWrapper, ContactSectionItemValue, ContactSectionItemName, ContactSectionFormWrapper, Footer, FooterTitle, FooterIcons, FooterCopyRight } from './styles';
 import AssetImage from '../../components/AssetImage';
 import VagaCertaLogo from "../../assets/vaga-certa-logo.png";
@@ -14,13 +14,17 @@ import Input from '../../components/Input';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import TextArea from '../../components/TextArea';
+import { useToast } from '../../providers/ToastProvider';
+import LoginModal from '../../components/Modals/LoginModal';
 
 const LandingPage: React.FC = () => {
 
   const [plans, setPlans] = useState<Plan[]>([{} as Plan]);
   const [plansCandidates, setPlansCandidates] = useState<Plan[]>([{} as Plan]);
+  const [showSignInSignUpModal, setShowSignInSignUpModal] = useState<boolean>(false);
 
   const formRef = useRef<FormHandles>(null);
+  const { addToast } = useToast();
 
   useEffect(() => {
     async function getPlans() {
@@ -43,6 +47,16 @@ const LandingPage: React.FC = () => {
     }
 
     getPlans();
+  }, []);
+
+  const handleLogin = useCallback(() => {
+    console.log("handleLogin");
+
+    setShowSignInSignUpModal(true);
+  }, []);
+
+  const handleCloseSignInSignUpModal = useCallback(() => {
+    setShowSignInSignUpModal(false);
   }, []);
 
   return (
@@ -88,7 +102,7 @@ const LandingPage: React.FC = () => {
         </Header>
         <Wallpaper>
           <SignInSignUpBox>
-            <Button typeStyle='neutral' outline={true} rounded>Login</Button>
+            <Button typeStyle='neutral' outline={true} rounded onClick={handleLogin}>Login</Button>
             <Button typeStyle='neutral' outline={true} rounded>Cadastro</Button>
           </SignInSignUpBox>
 
@@ -201,6 +215,7 @@ const LandingPage: React.FC = () => {
             </FooterCopyRight>
           </VBox>
         </Footer>
+        <LoginModal title="Login" onSubmit={() => null} visible={showSignInSignUpModal} onClose={handleCloseSignInSignUpModal} />
       </Container>
     </>
   )

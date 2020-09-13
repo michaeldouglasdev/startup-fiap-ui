@@ -6,15 +6,29 @@ interface ContainerProps {
 	isFilled: boolean;
 	isErrored: boolean;
 	transparent?: boolean;
+	small?: boolean;
+	rounded?: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
 
 	background: ${({ transparent }) => transparent ? 'transparent' : 'white'};
 	border: 1px solid #ddd;
-	padding: 16px;
 	color: #666360;
-	border-radius: 10px;
+	${({ rounded }) => rounded
+
+		?
+		css`
+			border-radius: 24px;
+			padding: ${small => small ? '8px 16px' : '16px 24px'};
+		`
+		:
+		css`
+			border-radius: 10px;
+			padding: ${small => small ? '8px' : '16px'};
+
+		`
+	}
 	width: 100%;
 
 	display: flex;
